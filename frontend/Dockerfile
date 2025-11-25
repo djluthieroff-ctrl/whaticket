@@ -13,7 +13,8 @@ RUN npm install --legacy-peer-deps
 # Copiar código
 COPY . .
 
-# Build da aplicação
+# Build da aplicação com OpenSSL legacy provider
+ENV NODE_OPTIONS=--openssl-legacy-provider
 RUN npm run build
 
 # Estágio de produção
